@@ -1,0 +1,218 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.project {
+  background-color: $background1;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  @include responsive(phone) {
+    width: 95%;
+    margin: 3%;
+  }
+
+  .technologies {
+    font-size: 1.8rem;
+    color: $accent2;
+    padding: 0 2.5rem;
+    @include responsive(phone) {
+      font-size: 1.5rem;
+    }
+  }
+  .title {
+    padding: 2%;
+    margin: 0;
+    color: $accent1;
+    text-shadow: 2px 2px 1px black;
+  }
+  .project-description {
+    font-size: 2rem;
+    margin: 4% 25px 0 25px;
+    opacity: 0.8;
+    @include responsive(phone) {
+      font-size: 1.6rem;
+    }
+  }
+  .image-button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .project-image {
+    width: 100%;
+  }
+  .group1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 0.5rem;
+  }
+  .more-info-button {
+    //button that opens project modal
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+    &:hover {
+      cursor: pointer;
+      border-color: $accent3;
+      color: $accent3;
+    }
+  }
+  .live-link {
+    //live website button
+    font-size: 1.4rem;
+    display: flex;
+    border: white 2px solid;
+    padding: 0.15rem;
+    border-radius: 10px;
+    width: 45px;
+    height: 40px;
+
+    justify-content: center;
+
+    &:hover {
+      border-color: $accent3;
+      color: $accent3;
+    }
+  }
+  .links {
+    // link container (live-link, github-icon, more-info-button)
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0.3rem 0 1rem 0;
+    gap: 1rem;
+    align-items: center;
+    @include responsive(phone) {
+      justify-content: space-around;
+
+      width: 150px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .github-icon {
+      width: 40px;
+      height: 40px;
+      border: white solid 1px;
+      border-radius: 5px;
+      background-color: white;
+      &:hover {
+        border-color: $accent3;
+        background-color: $accent3;
+      }
+    }
+    a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: $accent3;
+      }
+    }
+  }
+}
+// @media (orientation: landscape) and (max-width: 900px) {
+//   .project {
+//     background-color: #2f3133;
+//     border-radius: 25px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 100%;
+//     width: 100%;
+//     .title {
+//       font-size: 1.5rem;
+//       padding: 2%;
+//     }
+//     p {
+//       font-size: 1.3rem;
+//       margin: 4% 25px 0 25px;
+//     }
+//     .project-image {
+//       //max-width: 375px;
+//       width: 100%;
+//     }
+//     .links {
+//       padding: 0;
+//       list-style-type: none;
+//       display: flex;
+//       justify-content: space-around;
+
+//       width: 150px;
+//       .github-icon {
+//         width: 40px;
+//         height: 40px;
+//       }
+//       a {
+//         color: white;
+//         font-size: 1.5rem;
+//         text-decoration: none;
+//         &:hover {
+//           color: #76b041;
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 480px) {
+//   .project {
+//     background-color: #2f3133;
+//     border-radius: 25px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 100%;
+//     width: 95%;
+//     margin: 3%;
+//     .title {
+//       font-size: 1.3rem;
+//       padding: 2%;
+//     }
+//     p {
+//       font-size: 1.1rem;
+//       margin: 4% 25px 0 25px;
+//     }
+//     .project-image {
+//       width: 100%;
+//     }
+//     .links {
+//       padding: 0;
+//       list-style-type: none;
+//       display: flex;
+//       justify-content: space-around;
+
+//       width: 150px;
+//       .github-icon {
+//         width: 40px;
+//         height: 40px;
+//       }
+//       a {
+//         color: white;
+//         font-size: 1.5rem;
+//         text-decoration: none;
+//         &:hover {
+//           color: #76b041;
+//         }
+//       }
+//     }
+//   }
+// }

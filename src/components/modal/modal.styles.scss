@@ -1,0 +1,204 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+@use "../../scss/animations" as *;
+.modal {
+  position: fixed;
+
+  z-index: 1;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 37;
+    top: 15vh;
+    left: 20vw;
+    background-color: $background3;
+    width: 60vw;
+    height: 70vh;
+    overflow: scroll;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    padding-bottom: 2rem;
+    animation-name: scale-from-0;
+    animation-duration: 0.2s;
+    @include responsive(tab-land) {
+      top: 15vh;
+      left: 10vw;
+      width: 80vw;
+    }
+    @include responsive(phone-land) {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    @include responsive(phone) {
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      border-radius: 0;
+    }
+  }
+  .close-button {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-weight: 500;
+    border: none;
+    font-size: 2rem;
+    align-self: flex-end;
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+    }
+  }
+
+  .background {
+    background-color: rgba(63, 63, 63, 0.8);
+    // position: absolute;
+    width: 200vw;
+    height: 200vh;
+    z-index: 2;
+    position: fixed;
+    // top: 0;
+
+    top: 10vh;
+    left: 12.5vw;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    animation-name: scale-from-0;
+    animation-duration: 0.2s;
+  }
+
+  .children {
+    padding: 2rem 2.5rem 2.5rem 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    .name {
+      color: $accent1;
+      margin: 0;
+      font-size: 2.5rem;
+      padding-bottom: 1rem;
+      margin: 0;
+      color: $accent1;
+      text-shadow: 2px 2px 1px black;
+      @include responsive(phone) {
+        font-size: 2rem;
+      }
+    }
+    .description {
+      font-size: 2rem;
+      margin: 0 25px 0 25px;
+      opacity: 0.8;
+      @include responsive(phone) {
+        font-size: 1.6rem;
+      }
+    }
+    .technologies {
+      color: $accent2;
+      font-size: 1.8rem;
+      margin: 1rem 25px 0 25px;
+      @include responsive(phone) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .image-button {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .project-image {
+    width: 90%;
+  }
+  .group1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 0.5rem;
+  }
+  .more-info-button {
+    //button that opens project modal
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 2px solid white;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+    &:hover {
+      cursor: pointer;
+      border-color: $accent3;
+      color: $accent3;
+    }
+  }
+  .live-link {
+    //live website button
+    font-size: 1.4rem;
+    border: white 2px solid;
+    padding: 0.15rem;
+    border-radius: 10px;
+    width: 45px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    &:hover {
+      border-color: $accent3;
+      color: $accent3;
+    }
+  }
+  .links {
+    // link container (live-link, github-icon, more-info-button)
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0.3rem 0 1rem 0;
+    gap: 1rem;
+    align-items: center;
+    li {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .github-icon {
+      width: 40px;
+      height: 40px;
+      border: white solid 1px;
+      border-radius: 5px;
+      background-color: white;
+      &:hover {
+        border-color: $accent3;
+        background-color: $accent3;
+      }
+    }
+    a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: $accent3;
+      }
+    }
+  }
+}

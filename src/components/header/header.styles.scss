@@ -1,0 +1,165 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.header {
+  top: 0;
+  left: 0;
+  background-color: $background1;
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  z-index: 1;
+
+  @include responsive(tab-land) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 1rem;
+    position: relative;
+    @include responsive(tab-land) {
+      flex-direction: column;
+    }
+  }
+
+  .list-container {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5%;
+    gap: 2rem;
+    @include responsive(tab-land) {
+      display: none;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+      background-color: $background1;
+      margin: 0;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      gap: 0;
+      top: 0;
+      transform: translateY(6rem);
+      &.flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    li {
+      padding: 0.5%;
+      border-bottom: 2px solid $background1;
+      @include responsive(tab-land) {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        padding: 0;
+        background-color: $background1;
+        font-size: 1.4em;
+        border-bottom: 2px solid $background1;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 1rem 0;
+        transition: font-size 0.2s;
+        &:hover {
+          font-size: 2.5rem;
+        }
+        &:active {
+          font-size: 2rem;
+        }
+
+        @include responsive(tab-land) {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          &:hover {
+            border-bottom: 2px solid white;
+            background-color: white;
+            color: $background1;
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      &:hover {
+        border-bottom: 2px solid $accent3;
+
+        @include responsive(tab-land) {
+          border-bottom: 2px solid $background1;
+        }
+      }
+    }
+  }
+
+  .contact-container {
+    //list of linkedin and github icon
+    display: flex;
+    list-style-type: none;
+    margin-right: 2rem;
+    gap: 1.5rem;
+
+    @include responsive(tab-land) {
+      background-color: $background1;
+      justify-content: center;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      transform: translateY(6rem);
+      padding: 0;
+      &.display-none {
+        display: none;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+
+    @include responsive(tab-land) {
+      cursor: pointer;
+      z-index: 3;
+      position: absolute;
+      display: flex;
+      width: 3.5rem;
+      flex-direction: column;
+      margin: 13px 15px;
+      gap: 1rem;
+      top: 0;
+      left: 0;
+      &-line {
+        width: 100%;
+        height: 0.2rem;
+        background-color: white;
+      }
+    }
+  }
+  .burger-x {
+    height: 35px;
+    &:hover {
+      background-color: red;
+    }
+    .burger-line-1 {
+      position: absolute;
+      transform: translateY(16px) rotate(135deg);
+      transition: all 1s;
+    }
+    .burger-line-2 {
+      opacity: 0;
+      //transition: all 0.1s;
+    }
+    .burger-line-3 {
+      position: absolute;
+      transform: translateY(16px) rotate(-135deg);
+      transition: all 1s;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $background3;
+  min-height: 50vh;
+  height: 100%;
+  padding: 35px 0;
+  @include responsive(tab-land) {
+    min-height: 44vh;
+  }
+
+  .skills-container {
+    margin-top: 1rem;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10%;
+    grid-row-gap: 0;
+    @include responsive(tab-land) {
+      width: 75%;
+      display: grid;
+      grid-column-gap: 10%;
+    }
+    @include responsive(phone) {
+      width: 75%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 10%;
+    }
+  }
+}

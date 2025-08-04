@@ -1,0 +1,15 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.about {
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  height: 100%;
+  background-color: $background1;
+
+  .resume {
+    font-size: 3rem;
+    width: 60%;
+    opacity: 1;
+    color: $accent3;
+  }
+}

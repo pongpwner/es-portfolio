@@ -1,0 +1,19 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+.home-page {
+  background-color: $background3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    border-top: 1px solid $accent1;
+    border-bottom: 1px solid $background3;
+    margin: 0 auto;
+
+    width: 60%;
+    @include responsive(phone) {
+      width: 90%;
+    }
+  }
+}

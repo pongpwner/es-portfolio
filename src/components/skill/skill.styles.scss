@@ -1,0 +1,37 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/animations" as *;
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100px;
+  margin: 5%;
+
+  &:hover .skill-logo {
+    animation-name: jiggle;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-out;
+  }
+
+  .skill-logo {
+    max-width: 100%;
+    max-height: 100px;
+
+    @include responsive(phone) {
+      max-width: 30px;
+      max-height: 30px;
+    }
+  }
+  .name {
+    font-size: 3rem;
+    //opacity: 0.8;
+    color: $accent2;
+    text-shadow: 2px 2px 1px black;
+    @include responsive(phone) {
+      font-size: 1.4em;
+      opacity: 0.8;
+    }
+  }
+}

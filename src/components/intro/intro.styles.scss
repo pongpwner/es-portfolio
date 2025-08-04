@@ -1,0 +1,288 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+@use "../../scss/animations" as *;
+
+.intro {
+  display: flex;
+
+  height: calc(100vh - 60px);
+  background-color: $background1;
+  margin-top: 60px;
+
+  @include responsive(tab-land) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.3;
+  }
+  @include responsive(phone) {
+    min-height: 90vh;
+    height: 100%;
+  }
+  @include responsive(phone-land) {
+    flex-direction: row;
+  }
+
+  .intro-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 1px black;
+
+    @include responsive(tab-land) {
+      width: 80%;
+      padding: 7% 4%;
+    }
+    @include responsive(phone) {
+      padding: 7% 0;
+      width: 100%;
+    }
+  }
+  .intro-heading {
+    font-size: 5rem;
+    margin: 0 0 3% 20%;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+
+    @include responsive(tab-land) {
+      margin: 0;
+    }
+    @include responsive(tab-port) {
+      //font-size: 3.5rem;
+      margin: 0;
+    }
+    @include responsive(phone) {
+      font-size: 3rem;
+      margin: 0 0 1% 0;
+    }
+  }
+  .intro-subheading {
+    font-size: 3.5rem;
+    margin: 0 0 0 40%;
+    animation-name: slideInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+
+    @include responsive(tab-land) {
+      margin: 1% 0 1% 0;
+    }
+    @include responsive(tab-port) {
+      //font-size: 2.5rem;
+      margin: 0;
+    }
+    @include responsive(phone) {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+  }
+
+  .intro-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    @include responsive(phone) {
+      margin-top: 2%;
+    }
+
+    img {
+      width: 55rem;
+      clip-path: circle(42%);
+      animation-name: appear;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      @include responsive(tab-land) {
+        width: 55rem;
+        margin-left: 5%;
+      }
+      @include responsive(phone) {
+        width: 35rem;
+      }
+      @include responsive(phone-land) {
+        width: 35rem;
+      }
+    }
+  }
+  .hilight1 {
+    color: $accent1;
+    opacity: 1;
+  }
+  .hilight2 {
+    color: $accent1;
+    opacity: 1;
+  }
+}
+
+// @media (orientation: landscape) and (max-width: 900px) {
+//   .intro {
+//     display: flex;
+//     flex-direction: row;
+//     height: calc(100vh - 60px);
+//     background-color: #171d20;
+//     margin-top: 60px;
+//     justify-content: space-around;
+
+//     .intro-text {
+//       padding-left: 40px;
+//       width: 55%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       justify-content: center;
+//     }
+//     .intro-heading {
+//       font-size: 3rem;
+//       margin: 0 0 3% 0%;
+//       animation-name: slideInLeft;
+//       animation-duration: 2s;
+//     }
+//     .intro-subheading {
+//       font-size: 2.5rem;
+//       margin: 0 0 0 0%;
+//       animation-name: slideInRight;
+//       animation-duration: 2s;
+//     }
+
+//     .intro-visual {
+//       width: 40%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: flex-start;
+//       margin-bottom: 20px;
+
+//       img {
+//         padding-right: 60px;
+//         width: 250px;
+//       }
+//     }
+//     .hilight {
+//       color: #76b041;
+//       opacity: 1;
+//     }
+//   }
+// }
+// @media (orientation: portrait) and (max-width: 900px) {
+//   .intro {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 60px;
+//     line-height: 1.3;
+//     .intro-text {
+//       width: 80%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//     }
+//     .intro-heading {
+//       font-size: 3.5rem;
+//       margin: 0;
+//       @media (orientation: portrait) and (max-width: 600px) {
+//         font-size: 3rem;
+//       }
+//     }
+//     .intro-subheading {
+//       font-size: 2.5rem;
+//       margin: 1% 0 1% 0;
+//       @media (orientation: portrait) and (max-width: 600px) {
+//         font-size: 2rem;
+//       }
+//     }
+//     .intro-visual {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       img {
+//         width: 500px;
+//         margin-left: 5%;
+//         @media (orientation: portrait) and (max-width: 600px) {
+//           width: 400px;
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 700px) {
+//   .intro {
+//     display: flex;
+//     flex-direction: row;
+//     height: calc(100vh - 60px);
+//     background-color: #171d20;
+//     margin-top: 60px;
+//     justify-content: space-around;
+
+//     .intro-text {
+//       padding-left: 40px;
+//       width: 55%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       justify-content: center;
+//     }
+//     .intro-heading {
+//       font-size: 3rem;
+//       margin: 0 0 3% 0%;
+//     }
+//     .intro-subheading {
+//       font-size: 2.5rem;
+//       margin: 0 0 0 0%;
+//     }
+
+//     .intro-visual {
+//       width: 40%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: flex-start;
+//       margin-bottom: 20px;
+
+//       img {
+//         padding-right: 60px;
+//         width: 250px;
+//       }
+//     }
+//     .hilight {
+//       color: #76b041;
+//       opacity: 1;
+//     }
+//   }
+// }
+// @media (max-width: 480px) {
+//   .intro {
+//     display: flex;
+
+//     min-height: 90vh;
+//     height: 100%;
+//     background-color: #171d20;
+//     margin-top: 60px;
+//     .intro-text {
+//       display: flex;
+//       padding: 7% 0;
+//       width: 100%;
+//     }
+//     .intro-heading {
+//       font-size: 2rem;
+//       margin: 0 0 1% 0;
+//     }
+//     .intro-subheading {
+//       font-size: 1.7rem;
+//       margin: 0 0 0 0;
+//     }
+
+//     .intro-visual {
+//       margin-top: 2%;
+//       img {
+//         width: 250px;
+//       }
+//     }
+//     .hilight {
+//       color: $accent1;
+//       opacity: 1;
+//       text-shadow: 2px 2px 1px black;
+//     }
+//   }
+// }

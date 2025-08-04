@@ -1,0 +1,18 @@
+@use "../../scss/variables" as *;
+.contact {
+  align-items: center;
+  padding: 1rem;
+  background-color: $background3;
+  .heading1 {
+    padding-top: 0;
+  }
+
+  .contact-list {
+    width: 40%;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 1rem;
+  }
+}
